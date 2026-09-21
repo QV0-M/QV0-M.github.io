@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: star-galaxy-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python render_start.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: DB_PATH
+        value: "bot.db"
